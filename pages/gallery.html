@@ -1,0 +1,409 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="PaharNama Travellers Gallery — Explore authentic photos and travel stories from Hunza, Skardu, Swat, Fairy Meadows, Gilgit, and Chitral.">
+  <title>Travellers Gallery | PaharNama</title>
+
+  <!-- Google Fonts: Montserrat -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Page-Specific Stylesheet -->
+  <link rel="stylesheet" href="../css/gallery.css">
+</head>
+<body>
+  <!-- Sticky Site Header -->
+  <header class="site-header" id="site-header">
+    <div class="header-container">
+      <a href="../index.html" class="brand-logo" aria-label="PaharNama Home">
+        <img src="../images/long_logo_SVG.svg" alt="PaharNama Logo">
+      </a>
+
+      <nav class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="tourpackage.html" class="nav-link">Tour Packages</a></li>
+          <li class="nav-dropdown" id="locations-dropdown">
+            <div class="dropdown-trigger-group">
+              <a href="location.html" class="nav-link nav-link--dropdown">Locations</a>
+              <button type="button" class="dropdown-chevron-btn" id="locations-toggle" aria-expanded="false" aria-haspopup="true" aria-controls="locations-menu" aria-label="Toggle Locations submenu">
+                <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                  <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+              </button>
+            </div>
+            <ul class="dropdown-menu" id="locations-menu" role="menu">
+              <li role="none"><a href="location.html" role="menuitem">All Locations</a></li>
+              <li role="none"><a href="gilgit.html" role="menuitem">Gilgit</a></li>
+              <li role="none"><a href="skardu.html" role="menuitem">Skardu</a></li>
+              <li role="none"><a href="chitral.html" role="menuitem">Chitral</a></li>
+              <li role="none"><a href="maps.html" role="menuitem">Maps</a></li>
+            </ul>
+          </li>
+          <li><a href="transportation.html" class="nav-link">Transportation</a></li>
+          <li><a href="hotaf.html" class="nav-link">Hotels</a></li>
+          <li><a href="gallery.html" class="nav-link active" aria-current="page">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="header-actions">
+        <a href="booking.html" class="btn-book-now">Book Now</a>
+        <button type="button" class="hamburger-btn" id="hamburger-btn" aria-expanded="false" aria-controls="mobile-nav" aria-label="Open navigation menu">
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+          <span class="hamburger-line"></span>
+        </button>
+      </div>
+    </div>
+
+    <!-- Accessible Mobile Drawer -->
+    <nav class="mobile-nav" id="mobile-nav" aria-label="Mobile Navigation" hidden>
+      <ul class="mobile-nav-list">
+        <li><a href="../index.html" class="mobile-nav-link">Home</a></li>
+        <li><a href="about.html" class="mobile-nav-link">About</a></li>
+        <li><a href="tourpackage.html" class="mobile-nav-link">Tour Packages</a></li>
+        <li class="mobile-nav-group">
+          <div class="mobile-dropdown-row">
+            <a href="location.html" class="mobile-nav-link">Locations</a>
+            <button type="button" class="mobile-sub-toggle" id="mobile-locations-toggle" aria-expanded="false" aria-controls="mobile-locations-menu" aria-label="Expand Locations links">
+              <svg width="12" height="8" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </button>
+          </div>
+          <ul class="mobile-sub-list" id="mobile-locations-menu" hidden>
+            <li><a href="gilgit.html" class="mobile-sub-link">Gilgit</a></li>
+            <li><a href="skardu.html" class="mobile-sub-link">Skardu</a></li>
+            <li><a href="chitral.html" class="mobile-sub-link">Chitral</a></li>
+            <li><a href="maps.html" class="mobile-sub-link">Maps</a></li>
+          </ul>
+        </li>
+        <li><a href="transportation.html" class="mobile-nav-link">Transportation</a></li>
+        <li><a href="hotaf.html" class="mobile-nav-link">Hotels</a></li>
+        <li><a href="gallery.html" class="mobile-nav-link active" aria-current="page">Gallery</a></li>
+        <li><a href="contact.html" class="mobile-nav-link">Contact</a></li>
+        <li class="mobile-cta-item"><a href="booking.html" class="btn-book-now mobile-book-btn">Book Now</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main class="gallery-main">
+    <!-- Hero Banner with Breadcrumb & Geometric Mountain Line-Art -->
+    <section class="hero-section" aria-labelledby="gallery-heading">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          <nav class="breadcrumb" aria-label="Breadcrumb">
+            <a href="../index.html">Home</a>
+            <span class="breadcrumb-sep" aria-hidden="true">/</span>
+            <span aria-current="page">Gallery</span>
+          </nav>
+
+          <h1 id="gallery-heading" class="hero-title">PaharNama Moments: Through Our Traveller's Lenses</h1>
+          <p class="hero-subtitle">
+            Discover alpine lakes, apricot blossoms, and mountain stories captured by fellow explorers across Northern Pakistan.
+          </p>
+
+          <div class="hero-actions">
+            <button type="button" class="btn-primary-orange" id="open-share-modal-btn">
+              + Share Your Photo
+            </button>
+            <a href="hotaf.html" class="btn-outline-blue">Explore Partner Stays</a>
+          </div>
+        </div>
+
+        <!-- Geometric Mountain Peak Line-Art SVG -->
+        <div class="hero-art" aria-hidden="true">
+          <svg viewBox="0 0 420 220" fill="none" xmlns="http://www.w3.org/2000/svg" class="mountain-line-art">
+            <path d="M18 202L118 68L178 144L258 26L348 152L382 112L410 202H18Z" stroke="#0b78a6" stroke-width="2.5" stroke-linejoin="round"/>
+            <path d="M118 68L142 128L178 144" stroke="#20a7db" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M258 26L236 102L268 122L254 202" stroke="#20a7db" stroke-width="2" stroke-linejoin="round"/>
+            <path d="M62 144L92 126L120 144L145 128" stroke="#6b7882" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            <path d="M222 80L248 92L272 78L298 95" stroke="#6b7882" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"/>
+            <circle cx="348" cy="48" r="18" stroke="#e8833a" stroke-width="2" stroke-dasharray="4 4"/>
+          </svg>
+        </div>
+      </div>
+    </section>
+
+    <!-- Valley Filter Pills, Search & Sort Controls -->
+    <section class="controls-section" aria-label="Gallery Filters and Search">
+      <div class="container">
+        <div class="filter-pills-row" id="valley-filter-pills" role="group" aria-label="Filter photos by valley">
+          <!-- Populated dynamically by js/gallery.js with live counts -->
+        </div>
+
+        <div class="search-sort-bar">
+          <div class="search-input-wrap">
+            <svg class="search-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+              <circle cx="11" cy="11" r="7.5" stroke="currentColor" stroke-width="2"/>
+              <path d="M16.5 16.5L21 21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <label for="gallery-search" class="sr-only">Search by location or traveller name</label>
+            <input type="search" id="gallery-search" class="search-input" placeholder="Search by location, title, or traveller..." autocomplete="off">
+          </div>
+
+          <div class="sort-control-wrap">
+            <label for="gallery-sort" class="sort-label">Sort by</label>
+            <select id="gallery-sort" class="sort-select">
+              <option value="most-liked">Most Liked</option>
+              <option value="newest">Newest First</option>
+              <option value="oldest">Oldest First</option>
+              <option value="random">Random</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="results-meta">
+          <p id="results-count" class="results-count" aria-live="polite">Loading traveller moments...</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dynamic JS-Driven Gallery Grid -->
+    <section class="gallery-grid-section" aria-label="Travellers Photo Gallery">
+      <div class="container">
+        <div id="gallery-grid" class="gallery-grid">
+          <!-- Rendered dynamically by js/gallery.js -->
+        </div>
+
+        <div id="empty-gallery-state" class="empty-state" hidden>
+          <div class="empty-state-icon" aria-hidden="true">
+            <svg width="54" height="54" viewBox="0 0 24 24" fill="none">
+              <path d="M3 19L9 10L14 16L17 12L21 19H3Z" stroke="#20a7db" stroke-width="1.8" stroke-linejoin="round"/>
+              <circle cx="8" cy="7" r="2" stroke="#e8833a" stroke-width="1.8"/>
+            </svg>
+          </div>
+          <h2>No matching moments found</h2>
+          <p>Try clearing your search or choosing another Northern Pakistan valley.</p>
+          <button type="button" class="btn-primary-orange" id="reset-gallery-filters-btn">Reset Filters</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Toast Notification -->
+  <div id="gallery-toast" class="gallery-toast" role="status" aria-live="polite" hidden></div>
+
+  <!-- View Story Lightbox Modal -->
+  <div class="modal-backdrop" id="story-modal" role="dialog" aria-modal="true" aria-labelledby="story-modal-title" hidden>
+    <div class="modal-dialog modal-dialog--story">
+      <button type="button" class="modal-close-btn" id="close-story-modal-btn" aria-label="Close story modal">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+          <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+        </svg>
+      </button>
+
+      <div class="story-modal-layout">
+        <div class="story-modal-media">
+          <img id="story-modal-img" src="../images/gallery_passu.png" alt="">
+          <span id="story-modal-badge" class="location-badge">Hunza</span>
+        </div>
+
+        <div class="story-modal-body">
+          <div class="story-modal-meta">
+            <span id="story-modal-date" class="story-date">Oct 2026</span>
+          </div>
+          <h2 id="story-modal-title" class="story-modal-title">Story Title</h2>
+          <p id="story-modal-author" class="story-modal-author">By Traveller</p>
+          <p id="story-modal-text" class="story-modal-text"></p>
+
+          <div class="story-modal-footer">
+            <button type="button" class="like-btn like-btn--modal" id="story-modal-like-btn" aria-pressed="false">
+              <svg class="heart-icon" width="18" height="18" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+                <path d="M12 20.5C12 20.5 4 15.2 4 9.2C4 6.5 6.1 4.5 8.7 4.5C10.3 4.5 11.4 5.3 12 6.4C12.6 5.3 13.7 4.5 15.3 4.5C17.9 4.5 20 6.5 20 9.2C20 15.2 12 20.5 12 20.5Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+              </svg>
+              <span id="story-modal-like-count">0</span> Likes
+            </button>
+
+            <a href="hotaf.html" id="story-book-destination-link" class="btn-primary-orange">
+              Book This Destination
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Share Your Photo Modal -->
+  <div class="modal-backdrop" id="share-modal" role="dialog" aria-modal="true" aria-labelledby="share-modal-title" hidden>
+    <div class="modal-dialog modal-dialog--form">
+      <div class="modal-form-header">
+        <div>
+          <h2 id="share-modal-title">Share Your Photo</h2>
+          <p class="modal-form-subtitle">Add your Northern Pakistan travel memory to the community wall.</p>
+        </div>
+        <button type="button" class="modal-close-btn modal-close-btn--inline" id="close-share-modal-btn" aria-label="Close share photo modal">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" aria-hidden="true">
+            <path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"/>
+          </svg>
+        </button>
+      </div>
+
+      <form id="share-photo-form" class="share-form" novalidate>
+        <div class="form-row-two">
+          <div class="form-field">
+            <label for="share-traveller-name">Traveller Name <span class="req">*</span></label>
+            <input type="text" id="share-traveller-name" name="travellerName" placeholder="e.g., Zainab Tariq" required>
+            <span class="field-error" id="error-traveller-name"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="share-valley">Valley <span class="req">*</span></label>
+            <select id="share-valley" name="valley" required>
+              <option value="">Select a valley</option>
+              <option value="Hunza">Hunza</option>
+              <option value="Skardu">Skardu</option>
+              <option value="Swat">Swat</option>
+              <option value="Fairy Meadows">Fairy Meadows</option>
+              <option value="Gilgit">Gilgit</option>
+              <option value="Chitral">Chitral</option>
+            </select>
+            <span class="field-error" id="error-valley"></span>
+          </div>
+        </div>
+
+        <div class="form-row-two">
+          <div class="form-field">
+            <label for="share-photo-title">Photo Title <span class="req">*</span></label>
+            <input type="text" id="share-photo-title" name="photoTitle" placeholder="e.g., Sunrise at Passu Cones" required>
+            <span class="field-error" id="error-photo-title"></span>
+          </div>
+
+          <div class="form-field">
+            <label for="share-spot">Specific Spot (Optional)</label>
+            <input type="text" id="share-spot" name="spot" placeholder="e.g., Attabad Lake">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <label for="share-image-mode">Photo Source <span class="req">*</span></label>
+          <div class="image-source-tabs" role="tablist" aria-label="Choose how to supply your photo">
+            <button type="button" class="source-tab active" data-source-mode="preset" role="tab" aria-selected="true">Built-in Preset</button>
+            <button type="button" class="source-tab" data-source-mode="path" role="tab" aria-selected="false">Relative Path</button>
+            <button type="button" class="source-tab" data-source-mode="upload" role="tab" aria-selected="false">Upload Local File</button>
+          </div>
+
+          <div id="source-pane-preset" class="source-pane">
+            <select id="share-preset-select" aria-label="Select a preset Northern Pakistan photo">
+              <option value="../images/gallery_passu.png">Hunza — Passu Cones Golden Hour</option>
+              <option value="../images/gallery_altit.png">Hunza — Altit Fort Apricot Blossoms</option>
+              <option value="../images/gallery_kachura.png">Skardu — Upper Kachura Emerald Lake</option>
+              <option value="../images/gallery_deosai.png">Skardu — Deosai Plains &amp; Sheosar Lake</option>
+              <option value="../images/gallery_mahodand.png">Swat — Mahodand Lake Pine Valley</option>
+              <option value="../images/gallery_swat.png">Swat — Kalam Alpine Stream</option>
+              <option value="../images/gallery_nangaparbat.png">Fairy Meadows — Nanga Parbat Sunrise</option>
+              <option value="../images/gallery_gilgit.png">Gilgit — Rakaposhi &amp; Valley Bridge</option>
+              <option value="../images/gallery_chitral.png">Chitral — Kalash Valley &amp; Tirich Mir</option>
+            </select>
+          </div>
+
+          <div id="source-pane-path" class="source-pane" hidden>
+            <input type="text" id="share-relative-path" placeholder="../images/gallery_passu.png" aria-label="Relative image path">
+            <small class="field-hint">Use a relative local path starting with <code>../images/</code> (no external URLs).</small>
+          </div>
+
+          <div id="source-pane-upload" class="source-pane" hidden>
+            <input type="file" id="share-file-input" accept="image/*" aria-label="Upload an image from your device">
+            <small class="field-hint">Images stay locally in your browser (max 1.5 MB recommended).</small>
+          </div>
+
+          <span class="field-error" id="error-image-source"></span>
+
+          <div class="upload-preview-box">
+            <img id="share-image-preview" src="../images/gallery_passu.png" alt="Selected photo preview">
+          </div>
+        </div>
+
+        <div class="form-field">
+          <div class="label-row">
+            <label for="share-story">Your Travel Story <span class="req">*</span></label>
+            <span class="char-counter" id="story-char-counter">0 / 400</span>
+          </div>
+          <textarea id="share-story" name="story" rows="4" maxlength="400" placeholder="Tell fellow travellers about the trail, weather, or memorable moment behind this shot..." required></textarea>
+          <span class="field-error" id="error-story"></span>
+        </div>
+
+        <div class="form-actions">
+          <button type="button" class="btn-secondary-ghost" id="cancel-share-btn">Cancel</button>
+          <button type="submit" class="btn-primary-orange" id="submit-photo-btn">Submit Photo</button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- Static Site Footer -->
+  <footer class="site-footer">
+    <!-- Mountain Ridge Silhouette matching PaharNama_FooterSVG.svg -->
+    <div class="footer-ridge" aria-hidden="true">
+      <svg viewBox="0 0 1440 58" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+        <rect x="0" y="0" width="1440" height="58" fill="#e4f0f7"/>
+        <path d="M0,58 L0,39 L120,20 L200,34 L330,6 L430,30 L560,14 L700,36 L820,10 L940,32 L1080,16 L1200,34 L1320,12 L1440,30 L1440,58 Z" fill="#12181d"/>
+      </svg>
+    </div>
+
+    <div class="footer-body">
+      <div class="container footer-grid">
+        <div class="footer-brand">
+          <a href="../index.html" class="footer-logo-link" aria-label="PaharNama Home">
+            <img src="../images/high_contrast_logo_SVG.svg" alt="PaharNama High Contrast Emblem" class="footer-logo-img">
+          </a>
+          <p class="footer-tagline">Your guide to the mountains of northern Pakistan.</p>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">EXPLORE</h3>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="tourpackage.html">Tour Packages</a></li>
+            <li><a href="gallery.html">Travellers Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">DESTINATIONS</h3>
+          <ul class="footer-links">
+            <li><a href="gilgit.html">Gilgit</a></li>
+            <li><a href="skardu.html">Skardu</a></li>
+            <li><a href="chitral.html">Chitral</a></li>
+            <li><a href="maps.html">Maps</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">PLAN YOUR TRIP</h3>
+          <ul class="footer-links">
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="hotaf.html">Hotels &amp; Affiliation</a></li>
+            <li><a href="visa.html">Visa Guidelines</a></li>
+            <li><a href="pay.html">Payment</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h3 class="footer-heading">CONTACT</h3>
+          <ul class="footer-links footer-contact-list">
+            <li><a href="tel:+9231337283">+92 313 37283</a></li>
+            <li><a href="mailto:support@paharnama.pk">support@paharnama.pk</a></li>
+            <li><a href="contact.html">FAST University, H-11, Islamabad, Pakistan</a></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="container footer-bottom">
+        <p class="footer-copyright">&copy; 2026 PaharNama. All rights reserved.</p>
+        <p class="footer-ai-disclosure">Images on this website were generated using Gemini.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Page-Specific JavaScript -->
+  <script src="../js/gallery.js"></script>
+</body>
+</html>
