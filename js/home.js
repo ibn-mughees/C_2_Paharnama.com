@@ -10,8 +10,8 @@ const REVIEWS = [
     quote: 'Our local driver knew every safe viewpoint along the Karakoram Highway. Unforgettable trip.'
   },
   {
-    name: 'Daniel Brooks',
-    origin: 'London, UK',
+    name: 'Shadow Warrior',
+    origin: 'Daska, Sialkot',
     trip: 'Fairy Meadows',
     rating: 5,
     quote: 'Visa invitation guidance and jeep transfers were seamless. Nanga Parbat at sunrise left us speechless.'
