@@ -8,28 +8,37 @@
    1. Data Arrays (Vehicles and Destinations)
    ========================================================================== */
 
-/* Array of vehicle objects used to build cards and the Car dropdown */
+/* Array of vehicle objects used to build cards, pictures, reviews, and the Car dropdown */
 const vehicles = [
   {
     id: "toyota-hiace",
     name: "Toyota Hiace",
     seats: 12,
     pricePerDay: 18000,
-    category: "Group Tour Van"
+    image: "../images/car1_transportation_Nabeeha.png",
+    imageAlt: "Toyota Hiace van",
+    bestFor: "Best for: Families/Groups",
+    remark: "Highly chosen"
   },
   {
     id: "land-cruiser",
     name: "Land Cruiser",
     seats: 6,
     pricePerDay: 30000,
-    category: "4x4 Mountain SUV"
+    image: "../images/car2_transportation_Nabeeha.jpg",
+    imageAlt: "Land Cruiser 4x4 SUV",
+    bestFor: "Best for: Rough mountains",
+    remark: "Hikers' first choice"
   },
   {
     id: "toyota-corolla",
     name: "Toyota Corolla",
     seats: 4,
     pricePerDay: 12000,
-    category: "Comfort Sedan"
+    image: "../images/car3_transportation_Nabeeha.png",
+    imageAlt: "Toyota Corolla sedan",
+    bestFor: "Best for: Small families",
+    remark: "Families' first choice"
   }
 ];
 
@@ -114,27 +123,11 @@ function renderVehicleCards() {
     /* Top section of the card */
     const cardTop = document.createElement("div");
 
-    /* Image placeholder with accessible role and label */
-    const imagePlaceholder = document.createElement("div");
-    imagePlaceholder.className = "vehicle-image-placeholder";
-    imagePlaceholder.setAttribute("role", "img");
-    imagePlaceholder.setAttribute("aria-label", vehicle.name + " vehicle image placeholder");
-
-    const badge = document.createElement("span");
-    badge.className = "vehicle-placeholder-badge";
-    badge.textContent = vehicle.category;
-
-    const placeholderTitle = document.createElement("div");
-    placeholderTitle.className = "vehicle-placeholder-name";
-    placeholderTitle.textContent = vehicle.name;
-
-    const placeholderNote = document.createElement("div");
-    placeholderNote.className = "vehicle-placeholder-caption";
-    placeholderNote.textContent = "Vehicle Preview";
-
-    imagePlaceholder.appendChild(badge);
-    imagePlaceholder.appendChild(placeholderTitle);
-    imagePlaceholder.appendChild(placeholderNote);
+    /* Car picture with fixed height and descriptive alt text */
+    const vehicleImage = document.createElement("img");
+    vehicleImage.src = vehicle.image;
+    vehicleImage.alt = vehicle.imageAlt;
+    vehicleImage.className = "vehicle-image";
 
     /* Vehicle name heading */
     const title = document.createElement("h3");
@@ -151,31 +144,77 @@ function renderVehicleCards() {
     priceText.className = "vehicle-price";
     priceText.textContent = formatPKR(vehicle.pricePerDay) + " per day";
 
-    cardTop.appendChild(imagePlaceholder);
+    cardTop.appendChild(vehicleImage);
     cardTop.appendChild(title);
     cardTop.appendChild(seatsText);
     cardTop.appendChild(priceText);
 
-    /* Select button at the bottom of the card */
+    /* Bottom section containing the Select button, Check Reviews button, and review dropdown */
+    const cardActions = document.createElement("div");
+    cardActions.className = "card-actions";
+
+    /* Select button */
     const selectButton = document.createElement("button");
     selectButton.type = "button";
     selectButton.className = "btn btn-sunrise w-100 vehicle-select-btn";
     selectButton.textContent = "Select";
     selectButton.setAttribute("aria-pressed", "false");
 
-    /* Clicking the button selects this vehicle */
+    /* Clicking the Select button selects this vehicle */
     selectButton.addEventListener("click", function (event) {
       event.stopPropagation();
       selectVehicle(vehicle.id);
     });
 
-    /* Clicking anywhere on the card also selects this vehicle */
-    card.addEventListener("click", function () {
+    /* Unique ID for this card's Bootstrap collapse box */
+    const collapseId = "reviews-" + vehicle.id;
+
+    /* Smaller outlined Check Reviews button using Bootstrap collapse attributes */
+    const reviewsButton = document.createElement("button");
+    reviewsButton.type = "button";
+    reviewsButton.className = "btn btn-reviews w-100 mt-2";
+    reviewsButton.textContent = "Check Reviews";
+    reviewsButton.setAttribute("data-bs-toggle", "collapse");
+    reviewsButton.setAttribute("data-bs-target", "#" + collapseId);
+    reviewsButton.setAttribute("aria-expanded", "false");
+    reviewsButton.setAttribute("aria-controls", collapseId);
+
+    /* Bootstrap collapse container; data-bs-parent keeps only one dropdown open at a time */
+    const reviewsCollapse = document.createElement("div");
+    reviewsCollapse.id = collapseId;
+    reviewsCollapse.className = "collapse reviews-collapse mt-2";
+    reviewsCollapse.setAttribute("data-bs-parent", "#vehicle-cards-container");
+
+    /* Inner styled box holding the two review lines */
+    const reviewsBox = document.createElement("div");
+    reviewsBox.className = "reviews-box";
+
+    const bestForLine = document.createElement("p");
+    bestForLine.className = "review-best-for";
+    bestForLine.textContent = vehicle.bestFor;
+
+    const remarkLine = document.createElement("p");
+    remarkLine.className = "review-remark";
+    remarkLine.textContent = vehicle.remark;
+
+    reviewsBox.appendChild(bestForLine);
+    reviewsBox.appendChild(remarkLine);
+    reviewsCollapse.appendChild(reviewsBox);
+
+    /* Clicking the card selects the vehicle, except when clicking Check Reviews or inside the review box */
+    card.addEventListener("click", function (event) {
+      if (event.target.closest(".btn-reviews") || event.target.closest(".reviews-collapse")) {
+        return;
+      }
       selectVehicle(vehicle.id);
     });
 
+    cardActions.appendChild(selectButton);
+    cardActions.appendChild(reviewsButton);
+    cardActions.appendChild(reviewsCollapse);
+
     card.appendChild(cardTop);
-    card.appendChild(selectButton);
+    card.appendChild(cardActions);
     column.appendChild(card);
     container.appendChild(column);
   }

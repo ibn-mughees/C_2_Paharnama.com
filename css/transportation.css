@@ -185,6 +185,38 @@ select:focus-visible {
   padding: 0.95rem 2.4rem;
 }
 
+/* Smaller outlined Check Reviews button using Evening Blue */
+.btn-reviews {
+  background-color: transparent;
+  color: var(--evening-blue);
+  border: 2px solid var(--evening-blue);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-reviews:hover {
+  background-color: var(--evening-blue);
+  border-color: var(--evening-blue);
+  color: var(--glacier-white);
+}
+
+.btn-reviews[aria-expanded="true"] {
+  background-color: #e6f4fa;
+  color: var(--evening-blue);
+  border-color: var(--evening-blue);
+}
+
+.btn-reviews:focus-visible {
+  background-color: var(--glacier-white);
+  border-color: var(--evening-blue);
+  color: var(--evening-blue);
+  outline: 3px solid var(--deep-blue);
+  outline-offset: 3px;
+}
+
 /* ==========================================================================
    Hero Section
    ========================================================================== */
@@ -259,42 +291,40 @@ select:focus-visible {
   box-shadow: 0 10px 26px rgba(32, 167, 219, 0.22);
 }
 
-/* Placeholder box representing the vehicle image */
-.vehicle-image-placeholder {
-  background: linear-gradient(135deg, #dceef8 0%, #c4e3f3 100%);
-  border: 1px dashed var(--sky-blue);
+/* Uniform car picture inside each vehicle card */
+.vehicle-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
   border-radius: 10px;
-  height: 170px;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  padding: 1rem;
+  display: block;
   margin-bottom: 1.25rem;
 }
 
-.vehicle-placeholder-badge {
-  display: inline-block;
-  background-color: var(--evening-blue);
-  color: var(--glacier-white);
-  font-size: 0.78rem;
-  font-weight: 600;
-  padding: 0.25rem 0.75rem;
-  border-radius: 20px;
-  margin-bottom: 0.5rem;
+/* Review dropdown box shown below the Check Reviews button */
+.reviews-box {
+  background-color: var(--glacier-white);
+  border: 1px solid var(--light-border);
+  border-left: 4px solid var(--evening-blue);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  text-align: left;
 }
 
-.vehicle-placeholder-name {
-  color: var(--deep-blue);
-  font-size: 1.05rem;
+/* First review line shown in bold */
+.review-best-for {
+  color: var(--heading-color);
+  font-size: 0.92rem;
   font-weight: 700;
+  margin-bottom: 0.25rem;
 }
 
-.vehicle-placeholder-caption {
-  color: var(--caption-text);
-  font-size: 0.85rem;
-  margin-top: 0.2rem;
+/* Second review line shown in normal font weight */
+.review-remark {
+  color: var(--body-text);
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0;
 }
 
 /* Vehicle title, seats, and daily price */
