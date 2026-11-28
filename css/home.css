@@ -1,0 +1,232 @@
+/* ==============================
+   HOME HERO SECTION
+   ============================== */
+.hero-section {
+  position: relative;
+  min-height: clamp(360px, 56vh, 540px);
+  background-image:
+    linear-gradient(
+      180deg,
+      rgba(18, 24, 29, 0.24) 0%,
+      rgba(18, 24, 29, 0.35) 55%,
+      rgba(18, 24, 29, 0.72) 100%
+    ),
+    url('../images/fairymeadows_home_taha.jpg');
+  background-size: cover;
+  background-position: center 42%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding: 1.5rem 0 2.75rem;
+}
+
+.hero-location-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background-color: rgba(244, 249, 252, 0.9);
+  color: var(--color-deep-blue);
+  font-weight: 600;
+  font-size: 0.875rem;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  box-shadow: 0 4px 12px rgba(18, 24, 29, 0.16);
+}
+
+.hero-location-pin {
+  color: var(--color-evening-blue);
+  font-size: 1rem;
+  line-height: 1;
+}
+
+.hero-title {
+  color: var(--color-glacier-white);
+  text-shadow: 0 2px 14px rgba(18, 24, 29, 0.55);
+  margin: 0;
+}
+
+.hero-subtitle {
+  color: var(--color-glacier-white);
+  font-size: clamp(1rem, 1.6vw, 1.2rem);
+  font-weight: 500;
+  max-width: 620px;
+  margin: 0.75rem 0 0;
+  text-shadow: 0 1px 8px rgba(18, 24, 29, 0.55);
+}
+
+/* ==============================
+   MOVABLE REVIEWS BAR (Left -> Right)
+   ============================== */
+.reviews-section {
+  background-color: var(--color-white);
+  border-top: 1px solid var(--color-header-border);
+  border-bottom: 1px solid var(--color-header-border);
+  padding: 1.75rem 0 2rem;
+}
+
+.reviews-controls-btn {
+  background-color: var(--color-glacier-white);
+  color: var(--color-evening-blue);
+  border: 1px solid var(--color-header-border);
+  border-radius: 6px;
+  font-size: 0.85rem;
+  font-weight: 600;
+  padding: 0.35rem 0.85rem;
+  transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.reviews-controls-btn:hover,
+.reviews-controls-btn:focus-visible {
+  background-color: var(--color-footer-top);
+  border-color: var(--color-sky-blue);
+}
+
+.reviews-stage {
+  position: relative;
+  width: 100%;
+  height: 196px;
+  overflow: hidden;
+  background-color: var(--color-glacier-white);
+  border-top: 1px solid var(--color-header-border);
+  border-bottom: 1px solid var(--color-header-border);
+}
+
+/* 64s cycle: visible ~33.28s (>= 30s) gliding left-to-right, then off-screen ~30.72s (>= 30s) */
+.review-card {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 300px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-header-border);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  box-shadow: 0 6px 18px rgba(18, 24, 29, 0.06);
+  animation: review-glide-ltr 64s linear infinite;
+  will-change: transform, opacity;
+}
+
+.reviews-stage:hover .review-card,
+.reviews-stage:focus-within .review-card,
+.reviews-stage.is-paused .review-card {
+  animation-play-state: paused;
+}
+
+@keyframes review-glide-ltr {
+  0% {
+    transform: translate3d(-320px, -50%, 0);
+    opacity: 0;
+  }
+  2% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 1;
+  }
+  52% {
+    transform: translate3d(calc(100vw + 20px), -50%, 0);
+    opacity: 0;
+  }
+  100% {
+    transform: translate3d(calc(100vw + 20px), -50%, 0);
+    opacity: 0;
+  }
+}
+
+.review-stars {
+  color: var(--color-sunrise-orange);
+  font-size: 0.9rem;
+  letter-spacing: 0.08em;
+  margin-bottom: 0.35rem;
+}
+
+.review-quote {
+  color: var(--color-body);
+  font-size: 0.875rem;
+  line-height: 1.45;
+  margin-bottom: 0.65rem;
+}
+
+.review-author {
+  color: var(--color-heading);
+  font-weight: 700;
+  font-size: 0.85rem;
+  margin: 0;
+}
+
+.review-meta {
+  color: var(--color-caption);
+  font-size: 0.78rem;
+  margin: 0;
+}
+
+@media (max-width: 575.98px) {
+  .reviews-stage {
+    height: 210px;
+  }
+
+  .review-card {
+    width: 230px;
+    padding: 0.85rem 0.95rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reviews-stage {
+    height: auto;
+    overflow-x: auto;
+    display: flex;
+    gap: 1rem;
+    padding: 1.25rem;
+  }
+
+  .review-card {
+    position: static;
+    transform: none;
+    animation: none;
+    flex: 0 0 280px;
+  }
+}
+
+/* ==============================
+   BOOK NOW & INFO LINKS SECTION
+   ============================== */
+.home-actions-section {
+  background-color: var(--color-glacier-white);
+  padding: 2.5rem 0 1.25rem;
+}
+
+.book-now-bar {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-header-border);
+  border-radius: 14px;
+  padding: 1.5rem 1.75rem;
+  box-shadow: 0 4px 16px rgba(18, 24, 29, 0.04);
+}
+
+.info-links-section {
+  background-color: var(--color-footer-top);
+  padding: 2.25rem 0 2.5rem;
+  margin-top: 2rem;
+}
+
+.info-prompt-card {
+  background-color: var(--color-white);
+  border: 1px solid var(--color-header-border);
+  border-radius: 12px;
+  padding: 1.5rem 1.75rem;
+  height: 100%;
+}
+
+.info-inline-link {
+  color: var(--color-evening-blue);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 0.2s ease;
+}
+
+.info-inline-link:hover,
+.info-inline-link:focus-visible {
+  color: var(--color-sunrise-orange);
+}
