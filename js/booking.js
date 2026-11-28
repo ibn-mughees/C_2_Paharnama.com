@@ -10,7 +10,6 @@
 
 /* List of available destinations for the Destination dropdown */
 const destinationOptions = [
-  "Hunza",
   "Skardu",
   "Gilgit",
   "Chitral"
@@ -18,10 +17,9 @@ const destinationOptions = [
 
 /* List of available tour packages for the Tour Package dropdown */
 const tourPackageOptions = [
-  "Hunza Valley Explorer",
-  "Skardu Adventure",
-  "Chitral Culture Trip",
-  "Birthday Special"
+  "Field Trip",
+  "Wedding Packages",
+  "Birthday Packages",
 ];
 
 /* List of available vehicles for the Transport dropdown */
