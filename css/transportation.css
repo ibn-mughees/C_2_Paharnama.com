@@ -1,0 +1,601 @@
+/* ==========================================================================
+   PaharNama Transportation Page Stylesheet
+   Theme Colors:
+   - Sky Blue:       #20a7db
+   - Evening Blue:   #0b78a6
+   - Glacier White:  #f4f9fc
+   - Deep Blue:      #12181d
+   - Sunrise Orange: #e8833a
+   - Headings H2/H3: #35414a
+   - Body Text:      #4a5560
+   - Captions:       #6b7882
+   ========================================================================== */
+
+/* Theme color variables for consistent styling across the page */
+:root {
+  --sky-blue: #20a7db;
+  --evening-blue: #0b78a6;
+  --glacier-white: #f4f9fc;
+  --deep-blue: #12181d;
+  --sunrise-orange: #e8833a;
+  --sunrise-orange-hover: #cf6d26;
+  --heading-color: #35414a;
+  --body-text: #4a5560;
+  --caption-text: #6b7882;
+  --card-white: #ffffff;
+  --light-border: #d5e2ea;
+  --error-red: #c0392b;
+}
+
+/* Base page typography and background */
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: var(--glacier-white);
+  color: var(--body-text);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* Global accessible focus outline for keyboard navigation */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible {
+  outline: 3px solid var(--evening-blue);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Header & Navigation Bar
+   ========================================================================== */
+
+/* Header container with clean white background and thin light bottom line */
+.site-header {
+  background-color: var(--card-white);
+  border-bottom: 1px solid var(--light-border);
+  padding: 0.6rem 0;
+}
+
+/* Header logo sizing */
+.header-logo {
+  height: 52px;
+  width: auto;
+}
+
+/* Standard navigation links */
+.site-header .nav-link {
+  color: var(--body-text);
+  font-weight: 500;
+  font-size: 0.98rem;
+  padding: 0.5rem 0.85rem;
+  margin: 0 0.15rem;
+  position: relative;
+  transition: color 0.2s ease;
+}
+
+/* Hover and focus states for navigation links */
+.site-header .nav-link:hover,
+.site-header .nav-link:focus {
+  color: var(--evening-blue);
+}
+
+/* Active page link: Sky Blue text with a Sky Blue underline */
+.site-header .nav-link.active {
+  color: var(--sky-blue);
+  font-weight: 600;
+}
+
+.site-header .nav-link.active::after {
+  content: "";
+  display: block;
+  width: 100%;
+  height: 3px;
+  background-color: var(--sky-blue);
+  border-radius: 2px;
+  margin-top: 4px;
+}
+
+/* Dropdown menu styling for Locations */
+.site-header .dropdown-menu {
+  border: 1px solid var(--light-border);
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(18, 24, 29, 0.08);
+  padding: 0.5rem;
+}
+
+.site-header .dropdown-item {
+  color: var(--body-text);
+  border-radius: 6px;
+  padding: 0.5rem 0.9rem;
+  font-weight: 500;
+}
+
+.site-header .dropdown-item:hover,
+.site-header .dropdown-item:focus {
+  background-color: var(--glacier-white);
+  color: var(--evening-blue);
+}
+
+/* ==========================================================================
+   Buttons (Sunrise Orange & Selected State)
+   ========================================================================== */
+
+/* Primary Sunrise Orange button shared across Book Now, Select, Calculate, and Tour Packages */
+.btn-sunrise {
+  background-color: var(--sunrise-orange);
+  color: var(--glacier-white);
+  border: 2px solid var(--sunrise-orange);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.78rem 1.85rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(232, 131, 58, 0.35);
+  transition: background-color 0.2s ease, border-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Darker orange and slight lift on hover */
+.btn-sunrise:hover {
+  background-color: var(--sunrise-orange-hover);
+  border-color: var(--sunrise-orange-hover);
+  color: var(--glacier-white);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(207, 109, 38, 0.4);
+}
+
+/* Visible focus outline on orange buttons */
+.btn-sunrise:focus-visible {
+  background-color: var(--sunrise-orange-hover);
+  border-color: var(--sunrise-orange-hover);
+  color: var(--glacier-white);
+  outline: 3px solid var(--deep-blue);
+  outline-offset: 3px;
+}
+
+/* Active press feedback */
+.btn-sunrise:active {
+  background-color: var(--sunrise-orange-hover);
+  border-color: var(--sunrise-orange-hover);
+  color: var(--glacier-white);
+  transform: translateY(0);
+}
+
+/* Different visual style when a vehicle card is selected */
+.btn-selected {
+  background-color: var(--evening-blue);
+  color: var(--glacier-white);
+  border: 2px solid var(--evening-blue);
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.78rem 1.85rem;
+  border-radius: 10px;
+  box-shadow: 0 4px 14px rgba(11, 120, 166, 0.3);
+  transition: background-color 0.2s ease, transform 0.2s ease;
+}
+
+.btn-selected:hover,
+.btn-selected:focus-visible {
+  background-color: var(--sky-blue);
+  border-color: var(--sky-blue);
+  color: var(--glacier-white);
+}
+
+/* Larger bottom CTA button */
+.btn-cta {
+  font-size: 1.08rem;
+  padding: 0.95rem 2.4rem;
+}
+
+/* Smaller outlined Check Reviews button using Evening Blue */
+.btn-reviews {
+  background-color: transparent;
+  color: var(--evening-blue);
+  border: 2px solid var(--evening-blue);
+  font-weight: 600;
+  font-size: 0.9rem;
+  padding: 0.5rem 1.2rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-reviews:hover {
+  background-color: var(--evening-blue);
+  border-color: var(--evening-blue);
+  color: var(--glacier-white);
+}
+
+.btn-reviews[aria-expanded="true"] {
+  background-color: #e6f4fa;
+  color: var(--evening-blue);
+  border-color: var(--evening-blue);
+}
+
+.btn-reviews:focus-visible {
+  background-color: var(--glacier-white);
+  border-color: var(--evening-blue);
+  color: var(--evening-blue);
+  outline: 3px solid var(--deep-blue);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Hero Section
+   ========================================================================== */
+
+/* Generous spacing for the hero without any border or box around the H1 */
+.hero-section {
+  padding: 4.5rem 0 3rem;
+}
+
+/* Large, bold, centered Deep Blue H1 */
+.hero-title {
+  color: var(--deep-blue);
+  font-size: clamp(2rem, 4.5vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 1.15rem;
+}
+
+/* Subtitle below the H1 */
+.hero-subtitle {
+  color: var(--body-text);
+  font-size: 1.125rem;
+  max-width: 680px;
+  margin: 0 auto;
+}
+
+/* ==========================================================================
+   Shared Section Headings
+   ========================================================================== */
+
+.section-heading {
+  color: var(--heading-color);
+  font-size: 1.75rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  margin-bottom: 2.25rem;
+}
+
+/* ==========================================================================
+   Choose Your Ride (Vehicle Cards)
+   ========================================================================== */
+
+.ride-section {
+  padding: 2.5rem 0 3.5rem;
+}
+
+/* Vehicle card container */
+.vehicle-card {
+  background-color: var(--card-white);
+  border: 2px solid var(--light-border);
+  border-radius: 14px;
+  padding: 1.5rem;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0 6px 18px rgba(18, 24, 29, 0.05);
+  cursor: pointer;
+  transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.vehicle-card:hover {
+  border-color: var(--sky-blue);
+  transform: translateY(-3px);
+  box-shadow: 0 10px 24px rgba(32, 167, 219, 0.14);
+}
+
+/* Highlighted border and soft tint when the vehicle is selected */
+.vehicle-card.selected {
+  border-color: var(--sky-blue);
+  background-color: #eef8fd;
+  box-shadow: 0 10px 26px rgba(32, 167, 219, 0.22);
+}
+
+/* Uniform car picture inside each vehicle card */
+.vehicle-image {
+  width: 100%;
+  height: 190px;
+  object-fit: cover;
+  border-radius: 10px;
+  display: block;
+  margin-bottom: 1.25rem;
+}
+
+/* Review dropdown box shown below the Check Reviews button */
+.reviews-box {
+  background-color: var(--glacier-white);
+  border: 1px solid var(--light-border);
+  border-left: 4px solid var(--evening-blue);
+  border-radius: 8px;
+  padding: 0.85rem 1rem;
+  text-align: left;
+}
+
+/* First review line shown in bold */
+.review-best-for {
+  color: var(--heading-color);
+  font-size: 0.92rem;
+  font-weight: 700;
+  margin-bottom: 0.25rem;
+}
+
+/* Second review line shown in normal font weight */
+.review-remark {
+  color: var(--body-text);
+  font-size: 0.9rem;
+  font-weight: 400;
+  margin-bottom: 0;
+}
+
+/* Vehicle title, seats, and daily price */
+.vehicle-title {
+  color: var(--heading-color);
+  font-size: 1.35rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+}
+
+.vehicle-seats {
+  color: var(--caption-text);
+  font-size: 0.95rem;
+  font-weight: 500;
+  margin-bottom: 0.65rem;
+}
+
+.vehicle-price {
+  color: var(--evening-blue);
+  font-size: 1.15rem;
+  font-weight: 700;
+  margin-bottom: 1.25rem;
+}
+
+/* ==========================================================================
+   Calculate Fare Section (Form & Result Box)
+   ========================================================================== */
+
+.fare-section {
+  padding: 2.5rem 0 3.5rem;
+}
+
+/* Form card and Fare result card share clean matching containers */
+.fare-form-card,
+.fare-result-card {
+  background-color: var(--card-white);
+  border: 1px solid var(--light-border);
+  border-radius: 14px;
+  padding: 2rem;
+  box-shadow: 0 6px 18px rgba(18, 24, 29, 0.05);
+}
+
+/* Form labels and inputs */
+.fare-form-card .form-label {
+  color: var(--heading-color);
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+.fare-form-card .form-select,
+.fare-form-card .form-control {
+  border: 1.5px solid #bfd1dc;
+  border-radius: 8px;
+  padding: 0.7rem 0.9rem;
+  color: var(--deep-blue);
+  font-size: 0.98rem;
+}
+
+.fare-form-card .form-select:focus,
+.fare-form-card .form-control:focus {
+  border-color: var(--sky-blue);
+  box-shadow: 0 0 0 0.2rem rgba(32, 167, 219, 0.2);
+}
+
+/* Helper caption under days field */
+.field-caption {
+  color: var(--caption-text);
+  font-size: 0.85rem;
+  margin-top: 0.35rem;
+}
+
+/* Inline validation error message */
+.error-message {
+  color: var(--error-red);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+  min-height: 1.2rem;
+}
+
+/* Fare Result Box */
+.fare-box-heading {
+  color: var(--heading-color);
+  font-size: 1.45rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--glacier-white);
+  padding-bottom: 0.75rem;
+  margin-bottom: 1.25rem;
+}
+
+.fare-placeholder-text {
+  color: var(--caption-text);
+  font-size: 1rem;
+}
+
+.fare-breakdown-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.25rem 0;
+}
+
+.fare-breakdown-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.65rem 0;
+  border-bottom: 1px solid #edf3f7;
+  font-size: 0.98rem;
+}
+
+.fare-breakdown-label {
+  color: var(--body-text);
+}
+
+.fare-breakdown-value {
+  color: var(--deep-blue);
+  font-weight: 600;
+  text-align: right;
+}
+
+.fare-total-row {
+  background-color: var(--glacier-white);
+  border: 2px solid var(--sky-blue);
+  border-radius: 10px;
+  padding: 1rem 1.25rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+}
+
+.fare-total-label {
+  color: var(--heading-color);
+  font-size: 1.1rem;
+  font-weight: 700;
+}
+
+.fare-total-amount {
+  color: var(--evening-blue);
+  font-size: 1.35rem;
+  font-weight: 800;
+}
+
+/* ==========================================================================
+   Bottom Call-to-Action Section
+   ========================================================================== */
+
+.cta-section {
+  padding: 1rem 0 4.5rem;
+}
+
+/* ==========================================================================
+   Footer Section (Mountain Zig-Zag Top & Deep Blue Background)
+   ========================================================================== */
+
+.site-footer {
+  margin-top: 1rem;
+}
+
+/* Light zig-zag mountain edge sitting right above the Deep Blue footer */
+.footer-mountain-edge {
+  width: 100%;
+  line-height: 0;
+  overflow: hidden;
+  background-color: var(--glacier-white);
+}
+
+.mountain-svg {
+  display: block;
+  width: 100%;
+  height: 55px;
+}
+
+.mountain-svg polygon {
+  fill: var(--deep-blue);
+}
+
+/* Main dark footer area */
+.footer-main {
+  background-color: var(--deep-blue);
+  color: #d7e0e6;
+  padding: 3rem 0 2rem;
+}
+
+.footer-tagline {
+  color: #d7e0e6;
+  font-size: 0.95rem;
+  line-height: 1.6;
+  margin-bottom: 1.25rem;
+  max-width: 240px;
+}
+
+.footer-logo {
+  width: 145px;
+  height: auto;
+  border-radius: 14px;
+}
+
+/* Sky Blue uppercase column headings */
+.footer-heading {
+  color: var(--sky-blue);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-bottom: 1rem;
+}
+
+/* Footer navigation lists */
+.footer-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer-links li {
+  margin-bottom: 0.65rem;
+  font-size: 0.92rem;
+}
+
+.footer-links a {
+  color: #d7e0e6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover,
+.footer-links a:focus {
+  color: var(--sky-blue);
+  text-decoration: underline;
+}
+
+.footer-contact li {
+  color: #d7e0e6;
+}
+
+/* Thin horizontal line above copyright */
+.footer-divider {
+  border: 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.14);
+  margin: 2.25rem 0 1.25rem;
+}
+
+.footer-copyright {
+  color: #9aa7b2;
+  font-size: 0.88rem;
+}
+
+/* ==========================================================================
+   Responsive Adjustments for Mobile Screens
+   ========================================================================== */
+
+@media (max-width: 991.98px) {
+  .site-header .nav-link.active::after {
+    width: 120px;
+  }
+}
+
+@media (max-width: 575.98px) {
+  .hero-section {
+    padding: 3rem 0 2rem;
+  }
+
+  .fare-form-card,
+  .fare-result-card {
+    padding: 1.35rem;
+  }
+
+  .fare-total-row {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
