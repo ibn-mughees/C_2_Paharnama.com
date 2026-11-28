@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Skardu — PaharNama | Northern Pakistan Travel Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="../css/locations.css" />
+</head>
+<body data-location="skardu">
+
+  <!-- Sticky Header -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <a href="../index.html" class="brand-link" aria-label="PaharNama Home">
+        <img src="../images/long_logo_SVG.svg" alt="PaharNama Logo" class="brand-logo" />
+      </a>
+
+      <button
+        type="button"
+        id="mobile-menu-btn"
+        class="mobile-menu-btn"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="main-nav"
+      >
+        &#9776;
+      </button>
+
+      <nav id="main-nav" class="main-nav" aria-label="Primary Navigation">
+        <ul class="nav-list">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="about.html" class="nav-link">About</a></li>
+          <li><a href="tour-packages.html" class="nav-link">Tour Packages</a></li>
+          <li id="locations-dropdown" class="nav-dropdown">
+            <a
+              href="#"
+              id="locations-dropdown-toggle"
+              class="nav-link active"
+              aria-haspopup="true"
+              aria-expanded="false"
+            >
+              Locations
+              <svg class="dropdown-caret" viewBox="0 0 12 8" fill="none" aria-hidden="true">
+                <path d="M1 1.5L6 6.5L11 1.5" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              </svg>
+            </a>
+            <ul class="dropdown-menu" aria-label="Destinations submenu">
+              <li><a href="gilgit.html" class="dropdown-link">Gilgit</a></li>
+              <li><a href="skardu.html" class="dropdown-link active">Skardu</a></li>
+              <li><a href="chitral.html" class="dropdown-link">Chitral</a></li>
+              <li><a href="maps.html" class="dropdown-link">Maps</a></li>
+            </ul>
+          </li>
+          <li><a href="transportation.html" class="nav-link">Transportation</a></li>
+          <li><a href="hotels.html" class="nav-link">Hotels</a></li>
+          <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+          <li><a href="contact.html" class="nav-link">Contact</a></li>
+        </ul>
+        <a href="booking.html?destination=skardu" class="btn btn-sm header-cta">Book Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <!-- Hero Banner -->
+    <section class="location-hero" aria-labelledby="hero-title">
+      <svg class="hero-bg-svg" viewBox="0 0 1440 460" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+        <defs>
+          <linearGradient id="skarduHeroSky" x1="0" y1="0" x2="0" y2="1">
+            <stop offset="0%" stop-color="#0b78a6" />
+            <stop offset="65%" stop-color="#20a7db" />
+            <stop offset="100%" stop-color="#b8e5f7" />
+          </linearGradient>
+        </defs>
+        <rect width="1440" height="460" fill="url(#skarduHeroSky)" />
+        <polygon points="0,370 210,160 440,370" fill="#1b3a4f" />
+        <polygon points="280,370 590,85 890,370" fill="#122736" />
+        <polygon points="590,85 520,175 585,155 640,185 690,150" fill="#f4f9fc" />
+        <polygon points="730,370 1050,120 1380,370" fill="#1e445c" />
+        <polygon points="1050,120 995,190 1055,175 1105,198" fill="#f4f9fc" />
+        <rect x="0" y="345" width="1440" height="115" fill="#0b78a6" opacity="0.78" />
+        <path d="M0 370 Q360 342 720 368 T1440 362 L1440 460 L0 460 Z" fill="#12181d" opacity="0.28" />
+      </svg>
+      <div class="hero-scrim" aria-hidden="true"></div>
+
+      <div class="hero-card">
+        <span class="hero-breadcrumb">Locations &rsaquo; Baltistan</span>
+        <h1 id="hero-title" class="hero-title">Skardu</h1>
+        <p class="hero-subtitle">Glacial lakes, cold desert dunes, and the grand gateway to the Karakoram giants.</p>
+        <a href="#cost-estimator" class="btn">Plan this Trip</a>
+      </div>
+    </section>
+
+    <!-- Tabbed Information Section -->
+    <section class="info-tabs-section" aria-label="Skardu travel information">
+      <div class="container">
+        <div class="tabs-bar" role="tablist" aria-label="Destination guide tabs">
+          <button type="button" class="tab-btn active" role="tab" aria-selected="true" aria-controls="panel-overview" data-tab="panel-overview">
+            Overview
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-things" data-tab="panel-things">
+            Things to do
+          </button>
+          <button type="button" class="tab-btn" role="tab" aria-selected="false" aria-controls="panel-best-time" data-tab="panel-best-time">
+            Best time
+          </button>
+        </div>
+
+        <div class="tab-panels-box">
+          <div id="panel-overview" class="tab-panel active" role="tabpanel">
+            <p class="tab-lead">Base for K2, high lakes and the Deosai Plains.</p>
+            <p class="tab-copy">
+              Set in a wide sandy basin where the Indus and Shigar rivers meet at 2,228 meters, Skardu is the capital of Baltistan and the launchpad for expeditions to K2, Broad Peak, and Concordia. Beyond mountaineering, it rewards travellers with serene mirror lakes, centuries-old royal forts, and high-altitude plateaus.
+            </p>
+            <div class="quick-facts-grid">
+              <div class="fact-pill">
+                <span class="fact-label">Elevation</span>
+                <span class="fact-value">2,228 m (7,310 ft)</span>
+              </div>
+              <div class="fact-pill">
+                <span class="fact-label">Access</span>
+                <span class="fact-value">Skardu Int&rsquo;l Airport (KDU) &amp; Jaglot Road</span>
+              </div>
+              <div class="fact-pill">
+                <span class="fact-label">Famous For</span>
+                <span class="fact-value">Deosai, Shigar Fort &amp; K2 Base Camp</span>
+              </div>
+            </div>
+          </div>
+
+          <div id="panel-things" class="tab-panel" role="tabpanel">
+            <p class="tab-lead">Unforgettable experiences around Skardu</p>
+            <ul class="activity-list">
+              <li class="activity-item">
+                <span class="activity-bullet">&#9670;</span>
+                <span>Cross the wildflower meadows of <strong>Deosai National Park</strong> on a 4x4 safari.</span>
+              </li>
+              <li class="activity-item">
+                <span class="activity-bullet">&#9670;</span>
+                <span>Tour the restored 17th-century heritage palace at <strong>Shigar Fort</strong>.</span>
+              </li>
+              <li class="activity-item">
+                <span class="activity-bullet">&#9670;</span>
+                <span>Photograph Nanga Parbat reflected in <strong>Sheosar Lake</strong>.</span>
+              </li>
+              <li class="activity-item">
+                <span class="activity-bullet">&#9670;</span>
+                <span>Ride ATVs or watch sunset across the <strong>Sarfaranga Cold Desert</strong> dunes.</span>
+              </li>
+              <li class="activity-item">
+                <span class="activity-bullet">&#9670;</span>
+                <span>Paddle wooden boats at <strong>Upper Kachura</strong> and Shangrila Resort lakes.</span>
+              </li>
+              <li class="activity-item">
+                <span class="activity-bullet">&#9670;</span>
+                <span>Hike up to historic <strong>Kharpocho Fort</strong> overlooking the Indus basin.</span>
+              </li>
+            </ul>
+          </div>
+
+          <div id="panel-best-time" class="tab-panel" role="tabpanel">
+            <p class="tab-lead">Seasonal guide for visiting Skardu</p>
+            <div class="season-grid">
+              <div class="season-card">
+                <h4>Spring (April – May)</h4>
+                <p>Vibrant apricot blossoms transform Shigar and Skardu valleys; valley roads stay comfortable and uncrowded.</p>
+              </div>
+              <div class="season-card">
+                <h4>Summer Peak (June – September)</h4>
+                <p>Best window for Deosai Plains, Sheosar Lake, and Karakoram treks once high snow passes thaw.</p>
+              </div>
+              <div class="season-card">
+                <h4>Autumn (October – November)</h4>
+                <p>Amber foliage lines Lower &amp; Upper Kachura lakes with crisp air and dramatic mountain visibility.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Places to Visit -->
+    <section class="places-section" aria-labelledby="places-heading">
+      <div class="container">
+        <h2 id="places-heading" class="section-heading">Places to Visit</h2>
+        <p class="section-caption">Save your favorite landmarks or click View for route distance and travel highlights.</p>
+
+        <div class="places-grid">
+          <!-- Card 1: Deosai Plains -->
+          <article class="place-card">
+            <div class="place-media">
+              <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scenic illustration of Deosai Plains plateau and wildflowers">
+                <defs>
+                  <linearGradient id="deosaiSky" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0b78a6" />
+                    <stop offset="100%" stop-color="#a5e1f7" />
+                  </linearGradient>
+                </defs>
+                <rect width="400" height="250" fill="url(#deosaiSky)" />
+                <polygon points="0,145 75,92 155,145" fill="#46657d" />
+                <polygon points="120,145 215,82 310,145" fill="#355269" />
+                <polygon points="270,145 350,95 400,138 400,145" fill="#46657d" />
+                <polygon points="215,82 195,105 214,100 233,107" fill="#f4f9fc" />
+                <path d="M0 142 Q140 124 270 142 T400 138 L400 250 L0 250 Z" fill="#5e9c6e" />
+                <path d="M0 178 Q170 156 400 182 L400 250 L0 250 Z" fill="#457e54" />
+                <path d="M95 250 C140 212 205 208 265 162 L285 162 C230 212 180 222 145 250 Z" fill="#20a7db" />
+                <circle cx="65" cy="212" r="4" fill="#e8833a" />
+                <circle cx="84" cy="224" r="3.5" fill="#f4f9fc" />
+                <circle cx="315" cy="210" r="4" fill="#e8833a" />
+                <circle cx="336" cy="222" r="3.5" fill="#f4f9fc" />
+              </svg>
+              <span class="place-badge">4,114 m</span>
+            </div>
+            <div class="place-body">
+              <h3 class="place-title">Deosai Plains</h3>
+              <p class="place-caption">The &ldquo;Land of Giants&rdquo; — vast high-altitude plateau of summer blooms and brown bears.</p>
+            </div>
+            <div class="place-actions">
+              <button type="button" class="fav-btn" data-place="deosai-plains" aria-label="Favorite Deosai Plains" aria-pressed="false">&#9825;</button>
+              <button type="button" class="btn btn-sm view-place-btn" data-place="deosai-plains">View</button>
+            </div>
+          </article>
+
+          <!-- Card 2: Shigar Fort -->
+          <article class="place-card">
+            <div class="place-media">
+              <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scenic illustration of Shigar Fort heritage architecture">
+                <defs>
+                  <linearGradient id="shigarSky" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#20a7db" />
+                    <stop offset="100%" stop-color="#e3f3fa" />
+                  </linearGradient>
+                </defs>
+                <rect width="400" height="250" fill="url(#shigarSky)" />
+                <polygon points="0,185 120,82 260,185" fill="#4f6373" />
+                <polygon points="180,185 315,72 400,152 400,185" fill="#3b4d5c" />
+                <rect x="0" y="180" width="400" height="70" fill="#5e704f" />
+                <!-- Fort boulder base & walls -->
+                <path d="M90 220 L115 162 L290 162 L315 220 Z" fill="#70665e" />
+                <rect x="132" y="102" width="136" height="62" fill="#e8dfd5" stroke="#4a3f37" stroke-width="2" />
+                <rect x="148" y="84" width="104" height="20" fill="#d4c7b8" stroke="#4a3f37" stroke-width="2" />
+                <rect x="155" y="118" width="18" height="26" fill="#4a3f37" />
+                <rect x="191" y="118" width="18" height="26" fill="#e8833a" opacity="0.85" />
+                <rect x="227" y="118" width="18" height="26" fill="#4a3f37" />
+                <line x1="132" y1="132" x2="268" y2="132" stroke="#6b513e" stroke-width="4" />
+              </svg>
+              <span class="place-badge">17th Century</span>
+            </div>
+            <div class="place-body">
+              <h3 class="place-title">Shigar Fort</h3>
+              <p class="place-caption">Restored 400-year-old Balti palace built atop a giant boulder beside apricot orchards.</p>
+            </div>
+            <div class="place-actions">
+              <button type="button" class="fav-btn" data-place="shigar-fort" aria-label="Favorite Shigar Fort" aria-pressed="false">&#9825;</button>
+              <button type="button" class="btn btn-sm view-place-btn" data-place="shigar-fort">View</button>
+            </div>
+          </article>
+
+          <!-- Card 3: Sheosar Lake -->
+          <article class="place-card">
+            <div class="place-media">
+              <svg viewBox="0 0 400 250" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Scenic illustration of Sheosar Lake in Deosai">
+                <defs>
+                  <linearGradient id="sheosarSky" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#0b78a6" />
+                    <stop offset="100%" stop-color="#9fe0f7" />
+                  </linearGradient>
+                  <linearGradient id="sheosarWater" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#20a7db" />
+                    <stop offset="100%" stop-color="#084e6e" />
+                  </linearGradient>
+                </defs>
+                <rect width="400" height="250" fill="url(#sheosarSky)" />
+                <polygon points="20,152 135,78 250,152" fill="#344f63" />
+                <polygon points="170,152 290,62 400,152" fill="#233a4a" />
+                <polygon points="290,62 256,102 288,94 316,106" fill="#f4f9fc" />
+                <path d="M0 148 Q200 132 400 148 L400 175 L0 175 Z" fill="#5e9668" />
+                <ellipse cx="200" cy="210" rx="195" ry="48" fill="url(#sheosarWater)" />
+                <polygon points="290,238 265,205 290,211 312,203" fill="#f4f9fc" opacity="0.35" />
+                <path d="M0 218 Q130 245 400 220 L400 250 L0 250 Z" fill="#467a50" />
+              </svg>
+              <span class="place-badge">4,142 m</span>
+            </div>
+            <div class="place-body">
+              <h3 class="place-title">Sheosar Lake</h3>
+              <p class="place-caption">Sapphire alpine lake on Deosai&rsquo;s edge offering mirror views of Nanga Parbat.</p>
+            </div>
+            <div class="place-actions">
+              <button type="button" class="fav-btn" data-place="sheosar-lake" aria-label="Favorite Sheosar Lake" aria-pressed="false">&#9825;</button>
+              <button type="button" class="btn btn-sm view-place-btn" data-place="sheosar-lake">View</button>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Trip Cost Estimator -->
+    <section id="cost-estimator" class="estimator-section" aria-labelledby="estimator-heading">
+      <div class="container">
+        <h2 id="estimator-heading" class="section-heading">Trip Cost Estimator</h2>
+        <p class="section-caption">Estimate your Skardu &amp; Baltistan adventure budget in Pakistani Rupees (PKR).</p>
+
+        <div class="estimator-grid">
+          <form id="cost-estimator-form" class="estimator-form-card" novalidate>
+            <div class="form-group">
+              <label for="travellers-input" class="form-label">Travellers</label>
+              <input id="travellers-input" type="number" class="form-control" min="1" max="30" value="2" required />
+            </div>
+
+            <div class="form-group">
+              <label for="days-input" class="form-label">Days</label>
+              <input id="days-input" type="number" class="form-control" min="1" max="30" value="5" required />
+            </div>
+
+            <div class="form-group">
+              <label for="tier-select" class="form-label">Travel Tier</label>
+              <select id="tier-select" class="form-control">
+                <option value="standard" selected>Standard Explorer (Guesthouse &amp; Shared 4x4)</option>
+                <option value="comfort">Comfort (3-Star Hotel &amp; Private Car)</option>
+                <option value="deluxe">Deluxe (Resort Stay &amp; Private SUV)</option>
+              </select>
+            </div>
+
+            <p id="estimator-error" class="form-error" role="alert"></p>
+
+            <button type="submit" class="btn">Calculate</button>
+          </form>
+
+          <div class="estimator-result-box" aria-live="polite">
+            <span class="estimate-kicker">Estimated Trip Total</span>
+            <div id="estimate-amount" class="estimate-amount">Rs. ----</div>
+            <p id="estimate-sub" class="estimate-sub">Enter travellers &amp; days, then press Calculate.</p>
+            <div id="estimate-breakdown" class="estimate-breakdown hidden"></div>
+            <a id="estimate-book-link" href="booking.html?destination=skardu" class="btn btn-sm hidden">Proceed to Booking</a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Place Detail Modal -->
+  <div id="place-modal-backdrop" class="place-modal-backdrop hidden" role="dialog" aria-modal="true" aria-labelledby="modal-place-title">
+    <div class="place-modal">
+      <div class="modal-header">
+        <h3 id="modal-place-title">Place Details</h3>
+        <button type="button" id="modal-close-btn" class="modal-close" aria-label="Close modal">&times;</button>
+      </div>
+      <div class="modal-body">
+        <div id="modal-place-meta" class="modal-meta"></div>
+        <p id="modal-place-desc" class="modal-description"></p>
+        <ul id="modal-place-highlights" class="modal-highlights"></ul>
+        <div class="modal-footer">
+          <button type="button" id="modal-close-footer-btn" class="btn btn-sm" style="background-color: #35414a;">Close</button>
+          <a href="booking.html?destination=skardu" class="btn btn-sm">Plan Visit</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Mountain Silhouette Wave & Footer (Matches PaharNama_FooterSVG.svg) -->
+  <div class="footer-wave-wrap" aria-hidden="true">
+    <svg class="footer-wave-svg" viewBox="0 0 1440 80" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M0,80 L0,54 L120,28 L200,48 L330,10 L430,44 L560,20 L700,52 L820,14 L940,46 L1080,22 L1200,48 L1320,16 L1440,42 L1440,80 Z" fill="#12181d" />
+    </svg>
+  </div>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div class="footer-brand">
+          <div class="footer-brand-top">
+            <img src="../images/high_contrast_logo_SVG.svg" alt="PaharNama Emblem" class="footer-logo" />
+            <span class="footer-brand-name">PaharNama</span>
+          </div>
+          <p class="footer-tagline">Your guide to the mountains of northern Pakistan.</p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Explore</h4>
+          <ul class="footer-links">
+            <li><a href="../index.html">Home</a></li>
+            <li><a href="about.html">About</a></li>
+            <li><a href="tour-packages.html">Tour Packages</a></li>
+            <li><a href="gallery.html">Travellers Gallery</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Destinations</h4>
+          <ul class="footer-links">
+            <li><a href="gilgit.html">Gilgit</a></li>
+            <li><a href="skardu.html" class="active">Skardu</a></li>
+            <li><a href="chitral.html">Chitral</a></li>
+            <li><a href="maps.html">Maps</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Plan Your Trip</h4>
+          <ul class="footer-links">
+            <li><a href="booking.html">Booking</a></li>
+            <li><a href="transportation.html">Transportation</a></li>
+            <li><a href="hotels.html">Hotels &amp; Affiliation</a></li>
+            <li><a href="visa-guidelines.html">Visa Guidelines</a></li>
+          </ul>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact</h4>
+          <ul class="footer-links">
+            <li class="footer-contact-item">+92 313 37283</li>
+            <li class="footer-contact-item"><a href="mailto:support@paharnama.pk">support@paharnama.pk</a></li>
+            <li class="footer-contact-item">Fast University, H-11,<br />Islamabad, Pakistan</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span>&copy; 2026 PaharNama. All rights reserved.</span>
+        <span>Locations Module &mdash; Gilgit, Skardu &amp; Chitral</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="../js/locations.js"></script>
+</body>
+</html>
