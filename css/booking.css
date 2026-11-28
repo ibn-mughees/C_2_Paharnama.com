@@ -1,0 +1,289 @@
+/* ==========================================================================
+   PaharNama Booking Page Stylesheet (Booking-specific styles only)
+   Error Color:   #c62828
+   Success Color: #2e7d32
+   ========================================================================== */
+
+/* Booking color variables for error and success states */
+:root {
+  --booking-error-red: #c62828;
+  --booking-error-bg: #fdecea;
+  --booking-success-green: #2e7d32;
+  --booking-success-bg: #e8f5e9;
+}
+
+/* ==========================================================================
+   Booking Form Section
+   ========================================================================== */
+
+/* Vertical spacing around the booking form section */
+.booking-section {
+  padding: 2rem 0 3.5rem;
+}
+
+/* Centers the booking form and summary card at a comfortable reading width */
+.booking-wrapper {
+  max-width: 880px;
+}
+
+/* White card container for the booking form */
+.booking-form-card {
+  background-color: var(--card-white);
+  border: 1px solid var(--light-border);
+  border-radius: 14px;
+  padding: 2.25rem;
+  box-shadow: 0 6px 18px rgba(18, 24, 29, 0.05);
+}
+
+/* Form label styling matching the Transportation page */
+.booking-form-card .form-label {
+  color: var(--heading-color);
+  font-weight: 600;
+  margin-bottom: 0.45rem;
+}
+
+/* Input and dropdown styling inside the booking form */
+.booking-form-card .form-control,
+.booking-form-card .form-select {
+  border: 1.5px solid #bfd1dc;
+  border-radius: 8px;
+  padding: 0.72rem 0.9rem;
+  color: var(--deep-blue);
+  font-size: 0.98rem;
+}
+
+/* Highlight border when typing or selecting an input */
+.booking-form-card .form-control:focus,
+.booking-form-card .form-select:focus {
+  border-color: var(--sky-blue);
+  box-shadow: 0 0 0 0.2rem rgba(32, 167, 219, 0.2);
+}
+
+/* ==========================================================================
+   Validation Error Styles (#c62828)
+   ========================================================================== */
+
+/* Red alert box shown above the form when fields have errors */
+.booking-alert-box {
+  background-color: var(--booking-error-bg);
+  border: 2px solid var(--booking-error-red);
+  border-radius: 12px;
+  color: var(--booking-error-red);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1.5rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+}
+
+/* Warning icon alignment inside the red alert box */
+.booking-alert-icon {
+  flex-shrink: 0;
+  line-height: 1;
+  margin-top: 2px;
+}
+
+/* Bold "Required Details" heading inside the red alert box */
+.booking-alert-title {
+  display: block;
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin-bottom: 0.15rem;
+}
+
+/* Explanatory line inside the red alert box */
+.booking-alert-text {
+  font-size: 0.92rem;
+  font-weight: 500;
+}
+
+/* Red star placed next to labels of invalid fields */
+.required-star {
+  color: var(--booking-error-red);
+  font-weight: 700;
+  margin-left: 0.15rem;
+}
+
+/* Red border on invalid inputs and dropdowns */
+.booking-form-card .form-control.is-invalid,
+.booking-form-card .form-select.is-invalid {
+  border-color: var(--booking-error-red);
+}
+
+/* Keep focus ring red when an invalid field is focused */
+.booking-form-card .form-control.is-invalid:focus,
+.booking-form-card .form-select.is-invalid:focus {
+  border-color: var(--booking-error-red);
+  box-shadow: 0 0 0 0.2rem rgba(198, 40, 40, 0.2);
+}
+
+/* Red helper error message placed under each invalid field */
+.booking-error-message {
+  color: var(--booking-error-red);
+  font-size: 0.88rem;
+  font-weight: 600;
+  margin-top: 0.35rem;
+  min-height: 1.2rem;
+}
+
+/* ==========================================================================
+   Booking Summary Section
+   ========================================================================== */
+
+/* Spacing below the booking summary section */
+.summary-section {
+  padding: 0.5rem 0 4rem;
+}
+
+/* White card container for the booking summary */
+.summary-card {
+  background-color: var(--card-white);
+  border: 1px solid var(--light-border);
+  border-radius: 14px;
+  padding: 2.25rem;
+  box-shadow: 0 6px 18px rgba(18, 24, 29, 0.05);
+}
+
+/* Summary heading styled consistently with the Fare box heading */
+.summary-heading {
+  color: var(--heading-color);
+  font-size: 1.55rem;
+  font-weight: 700;
+  border-bottom: 2px solid var(--glacier-white);
+  padding-bottom: 0.8rem;
+  margin-bottom: 1.25rem;
+}
+
+/* Clean list container for the summary rows */
+.summary-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 1.75rem 0;
+}
+
+/* Individual summary row with label on the left and value on the right */
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid #edf3f7;
+  font-size: 0.98rem;
+}
+
+.summary-row:last-child {
+  border-bottom: none;
+}
+
+.summary-label {
+  color: var(--body-text);
+  font-weight: 500;
+}
+
+.summary-value {
+  color: var(--deep-blue);
+  font-weight: 600;
+  text-align: right;
+  word-break: break-word;
+}
+
+/* Action buttons row at the bottom of the summary card */
+.summary-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Small outlined button for Edit Details and modal Close */
+.btn-outline-booking {
+  background-color: transparent;
+  color: var(--evening-blue);
+  border: 2px solid var(--evening-blue);
+  font-weight: 600;
+  font-size: 0.92rem;
+  padding: 0.62rem 1.35rem;
+  border-radius: 8px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.btn-outline-booking:hover {
+  background-color: var(--evening-blue);
+  border-color: var(--evening-blue);
+  color: var(--glacier-white);
+}
+
+/* Clear keyboard focus outline when tabbing to the outlined button */
+.btn-outline-booking:focus-visible {
+  background-color: var(--glacier-white);
+  border-color: var(--evening-blue);
+  color: var(--evening-blue);
+  outline: 3px solid var(--deep-blue);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   Confirmation Modal Styles (#2e7d32)
+   ========================================================================== */
+
+/* Positions the Bootstrap modal near the top of the screen */
+.booking-modal-dialog {
+  margin-top: 1.75rem;
+}
+
+.booking-modal-content {
+  border: 1px solid var(--light-border);
+  border-radius: 16px;
+  box-shadow: 0 12px 32px rgba(18, 24, 29, 0.16);
+}
+
+/* Circular green tick badge */
+.modal-success-icon {
+  width: 68px;
+  height: 68px;
+  border-radius: 50%;
+  background-color: var(--booking-success-bg);
+  color: var(--booking-success-green);
+  border: 2px solid var(--booking-success-green);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Big green confirmation text */
+.modal-success-title {
+  color: var(--booking-success-green);
+  font-size: 1.45rem;
+  font-weight: 800;
+  letter-spacing: 0.02em;
+  margin-bottom: 0.65rem;
+}
+
+/* Smaller instruction text inside the modal */
+.modal-success-subtitle {
+  color: var(--body-text);
+  font-size: 1rem;
+  margin-bottom: 0;
+}
+
+/* ==========================================================================
+   Responsive Adjustments for Mobile Screens
+   ========================================================================== */
+
+@media (max-width: 575.98px) {
+  .booking-form-card,
+  .summary-card {
+    padding: 1.35rem;
+  }
+
+  .summary-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.25rem;
+  }
+
+  .summary-value {
+    text-align: left;
+  }
+}
